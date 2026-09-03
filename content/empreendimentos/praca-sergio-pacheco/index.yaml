@@ -1,0 +1,51 @@
+nome: Praça Sérgio Pacheco
+temLandingPage: false
+status: desenvolvimento
+categoria: strip-mall
+ordem: 7
+cidade: Uberlândia/MG
+zona: central
+tiposOperacao:
+  - academia
+  - auto-center
+  - banco
+  - concessionaria
+  - educacao
+  - entretenimento
+  - farmacia
+  - fast-food
+  - home-center
+  - pet-shop
+  - restaurante
+  - supermercado
+atuacao: []
+localizacao: Centro, Uberlândia/MG
+resumoCard: Strip mall em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Praça Sérgio Pacheco, Centro, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.909896,-48.274889&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse na Praça Sérgio Pacheco.
+seo:
+  metaTitle: Praça Sérgio Pacheco
+  metaDescription: Strip mall em desenvolvimento em Uberlândia.

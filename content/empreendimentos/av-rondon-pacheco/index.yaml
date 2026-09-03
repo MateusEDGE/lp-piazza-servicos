@@ -1,0 +1,48 @@
+nome: Av. Rondon Pacheco
+temLandingPage: false
+status: desenvolvimento
+categoria: strip-mall
+ordem: 11
+cidade: Uberlândia/MG
+zona: central
+tiposOperacao:
+  - academia
+  - banco
+  - concessionaria
+  - entretenimento
+  - farmacia
+  - fast-food
+  - pet-shop
+  - restaurante
+  - supermercado
+atuacao: []
+localizacao: Cazeca, Uberlândia/MG
+resumoCard: Strip mall em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. Rondon Pacheco, 3393, Cazeca, Uberlândia/MG, 38400-015
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+Rondon+Pacheco%2C+3393%2C+Cazeca%2C+Uberl%C3%A2ndia%2C+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse na Av. Rondon Pacheco.
+seo:
+  metaTitle: Av. Rondon Pacheco
+  metaDescription: Strip mall em desenvolvimento em Uberlândia.

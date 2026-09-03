@@ -1,0 +1,381 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== Cores NEXA (design system oficial) ===== */
+  --color-nexa-primary: #203399;
+  --color-nexa-secondary: #1b2c77;
+  --color-nexa-deep: #101a4d;
+  --color-nexa-tertiary: #f7f7f7;
+  --color-nexa-bright: #2a40c0;
+  --color-nexa-line: #3b54c9;
+  --color-nexa-ink: #0e1430;
+  --color-nexa-soft: #39406b;
+  --color-nexa-mist: #8089ad;
+
+  /* ===== Tipografia ===== */
+  --font-sans: var(--font-chakra), ui-sans-serif, system-ui, sans-serif;
+
+  /* ===== Raio de marca ===== */
+  --radius-brand: 14px;
+}
+
+/* Acento dinâmico das LPs — LpThemeProvider injeta --lp-accent* via style inline */
+@theme inline {
+  --color-lp-accent: var(--lp-accent, #3b54c9);
+  --color-lp-accent-soft: var(--lp-accent-soft, #e8ecfb);
+  --color-lp-accent-contrast: var(--lp-accent-contrast, #ffffff);
+}
+
+/* ===== Utilitários de marca ===== */
+@utility bg-gradient-nexa {
+  background-image: linear-gradient(150deg, #203399 0%, #1b2c77 60%, #101a4d 100%);
+}
+
+@utility bg-gradient-nexa-bright {
+  background-image: linear-gradient(150deg, #2a40c0 0%, #203399 55%, #1b2c77 100%);
+}
+
+@utility heading-nexa {
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+/* Mesmo peso e ritmo do heading-nexa, sem forçar caixa alta. Para valores que
+   carregam unidade — "4.000 m²" precisa do m minúsculo. */
+@utility heading-nexa-caixa {
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+@utility container-nexa {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ===== Refresh editorial (referência ZHA) ===== */
+
+@utility container-wide {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  @media (min-width: 768px) {
+    padding-inline: 40px;
+  }
+}
+
+@utility label-editorial {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+}
+
+@utility display-editorial {
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+}
+
+@utility display-hero {
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+}
+
+/* Label pequeno à esquerda + conteúdo deslocado à direita */
+@utility grid-editorial {
+  display: grid;
+  gap: 2.25rem;
+  @media (min-width: 1024px) {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 4.5rem;
+  }
+}
+
+@layer base {
+  body {
+    /* O mesmo cinza-azulado em que os degradês das seções claras terminam,
+       e não branco puro. As seções vão de #ffffff no topo a #eef0f8 no pé;
+       com o body em branco puro, qualquer pedaço que a seção não cobre (o
+       repique da rolagem, a emenda entre duas seções, a área abaixo do
+       conteúdo numa tela alta) aparece como um branco diferente ao lado do
+       fim do degradê. Igualando, a diferença deixa de existir. */
+    background-color: #eef0f8;
+    color: var(--color-nexa-ink);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  ::selection {
+    background-color: var(--color-nexa-primary);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-nexa-line);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Logo via máscara — pinta o PNG embutido na cor desejada (técnica do design system) */
+  .mark {
+    display: inline-block;
+    mask-image: url("/brand/logo.png");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: left center;
+    -webkit-mask-image: url("/brand/logo.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    -webkit-mask-position: left center;
+    background-color: currentColor;
+    aspect-ratio: 572 / 108;
+  }
+
+  /* ===== Crossfade dos textos do hero dirigido pelo compositor =====
+     A cena 3D pesada atrasa as atualizações de opacidade via JS (framer);
+     com scroll-driven animations o fade roda na thread do compositor,
+     sempre sincronizado com o scroll. O framer permanece como fallback.
+     Mapeamento: seção de 380svh com sticky de 100svh → o progresso do pino
+     (0→1) corresponde ao trecho "cover 20.8333% → 79.1667%" do view-timeline
+     (cover total = 380svh + 100svh de viewport). */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .hero-scrolly {
+        view-timeline-name: --hero;
+        view-timeline-axis: block;
+      }
+      .hero-step1,
+      .hero-step2,
+      .hero-step3,
+      .hero-cue {
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: --hero;
+        animation-range: cover 20.8333% cover 79.1667%;
+      }
+      .hero-step1 {
+        animation-name: hero-step1;
+      }
+      .hero-step2 {
+        animation-name: hero-step2;
+      }
+      .hero-step3 {
+        animation-name: hero-step3;
+      }
+      .hero-cue {
+        animation-name: hero-cue;
+      }
+    }
+  }
+
+  @keyframes hero-step1 {
+    0% { opacity: 1; transform: translateY(0); }
+    20% { opacity: 1; transform: translateY(0); }
+    30% { opacity: 0; transform: translateY(-36px); }
+    100% { opacity: 0; transform: translateY(-36px); }
+  }
+  @keyframes hero-step2 {
+    0% { opacity: 0; transform: translateY(24px); }
+    34% { opacity: 0; transform: translateY(24px); }
+    44% { opacity: 1; transform: translateY(8px); }
+    56% { opacity: 1; transform: translateY(-8px); }
+    64% { opacity: 0; transform: translateY(-24px); }
+    100% { opacity: 0; transform: translateY(-24px); }
+  }
+  @keyframes hero-step3 {
+    0% { opacity: 0; transform: translateY(24px); }
+    68% { opacity: 0; transform: translateY(24px); }
+    78% { opacity: 1; transform: translateY(4px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes hero-cue {
+    0% { opacity: 1; }
+    8% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* Sublinhado que varre da esquerda no hover (navbar/links editoriais) */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: -3px;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link[data-active="true"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link::after {
+      transition: none;
+    }
+  }
+
+  /* Brilho diagonal atravessando no hover (botões/CTAs) */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 0 35%,
+      rgba(255, 255, 255, 0.25) 45%,
+      rgba(255, 255, 255, 0.05) 52%,
+      transparent 60% 100%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  .btn-shine:hover::after {
+    transform: translateX(120%);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-shine::after {
+      display: none;
+    }
+  }
+  /* ===== Carrossel de marcas (automático, lento) =====
+     A trilha é duplicada no DOM e o deslocamento de -50% completa exatamente
+     uma cópia, então o laço não tem costura. O vão fica no padding de cada item,
+     nunca em `gap`: com gap as duas metades não medem 50% exatos e a volta
+     salta. A faixa não pausa: interação do usuário não interrompe o giro. */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 110s linear infinite;
+  }
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+  /* ===== Treliça viva do fundo das seções =====
+     Mantém a geometria de sempre (diagonais a ±45°), em quatro camadas com
+     espaçamentos e defasagens diferentes: cada uma respira no seu tempo, então
+     as linhas parecem surgir e desaparecer sem o desenho mudar de formato.
+
+     Duas animações por camada: `trelica-respira` pulsa a opacidade e
+     `trelica-desce` desliza o padrão para baixo, dando sensação de movimento.
+     O deslocamento vem de `--desce`, que é o passo da camada × √2 — a distância
+     vertical que reposiciona a diagonal em exatamente um período, então o laço
+     não tem costura. */
+  .trelica-viva {
+    animation:
+      trelica-respira 9.5s ease-in-out infinite,
+      trelica-desce 14s linear infinite;
+    will-change: transform, opacity;
+  }
+  /* A camada que desce precisa sobrar por cima e por baixo, senão a translação
+     descobre a borda de onde ela saiu. */
+  .trelica-tela {
+    position: absolute;
+    inset: calc(var(--desce, 209px) * -1) 0;
+    overflow: hidden;
+  }
+  .trelica-viva-2 {
+    animation-duration: 13s, 17s;
+    animation-delay: -5s, -3s;
+  }
+  .trelica-viva-3 {
+    animation-duration: 16.5s, 22s;
+    animation-delay: -9s, -7s;
+  }
+  .trelica-viva-4 {
+    animation-duration: 20s, 18s;
+    animation-delay: -14s, -11s;
+  }
+  @keyframes trelica-respira {
+    0%,
+    100% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  /* Desce por `transform`, e não por `background-position`.
+     `background-position` não é compositável: cada quadro repinta a camada
+     inteira, e com a máscara por cima ainda re-rasteriza a máscara. Eram 28
+     camadas na home somando 40 milhões de px² repintados por quadro, sem
+     parar, e era isso que travava a rolagem. `translate3d` roda na GPU e não
+     custa repintura nenhuma.
+     A distância continua sendo exatamente um período do padrão, então a
+     emenda segue invisível. Quem translada é a camada de dentro; a máscara
+     fica na de fora, parada, senão o esmaecido das bordas desceria junto. */
+  @keyframes trelica-desce {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, var(--desce, 209px), 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trelica-viva {
+      animation: none;
+      opacity: 0.7;
+    }
+  }
+  /* ===== Marca do fundo à deriva =====
+     O "X" da marca acompanha o movimento da treliça: deriva devagar, inclina
+     poucos graus e pulsa de opacidade. A opacidade base vem de `--marca-op`,
+     definida em cada instância, porque a animação sobrescreveria uma classe de
+     opacidade do Tailwind. Só transform e opacity animam. */
+  .marca-deriva {
+    opacity: var(--marca-op, 0.09);
+    animation: marca-deriva 26s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+  .marca-deriva-2 {
+    animation-duration: 34s;
+    animation-delay: -13s;
+    animation-direction: reverse;
+  }
+  @keyframes marca-deriva {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+      opacity: var(--marca-op, 0.09);
+    }
+    50% {
+      transform: translate3d(-20px, 28px, 0) rotate(5deg) scale(1.06);
+      opacity: calc(var(--marca-op, 0.09) * 1.8);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marca-deriva {
+      animation: none;
+    }
+  }
+}

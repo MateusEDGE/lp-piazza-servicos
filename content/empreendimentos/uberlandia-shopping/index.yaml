@@ -1,0 +1,100 @@
+nome: Uberlândia Shopping
+temLandingPage: true
+status: operacao
+categoria: hub-servicos
+ordem: 3
+cidade: Uberlândia/MG
+zona: sul
+tiposOperacao:
+  - sala-comercial
+  - saude
+  - coworking
+  - educacao
+atuacao:
+  - desenvolvimento
+  - comercializacao
+localizacao: Uberlândia/MG
+resumoCard: >-
+  Hub de serviços dentro do maior shopping da região: office, consultórios, clínicas, coworking
+  e ensino em um empreendimento com 190 lojas.
+destaque: 95% ocupado
+copy: >-
+  Com 53.000 m² de ABL, 190 lojas e um terreno de 130.000 m², o Uberlândia Shopping é um dos
+  principais destinos de compras e serviços da região.
+
+
+  A Nexa foi contratada para criar um HUB de serviços dentro do empreendimento, voltado para
+  serviços, office, consultórios, clínicas, coworking e ensino, ampliando a vocação do shopping
+  para além do varejo e gerando fluxo qualificado todos os dias.
+
+
+  São 3.000 m² dedicados a serviços que vivem de recorrência, o tipo de operação que traz a
+  mesma pessoa de volta várias vezes por mês.
+papelNexa: >-
+  Criação e estruturação do HUB de serviços do empreendimento: office, consultórios, clínicas,
+  coworking e ensino.
+fichaTecnica:
+  terreno: 130.000 m²
+  abl: 53.000 m²
+  operacoes: '190'
+  vagas: '2.400'
+  mix: 'Misto: varejo, serviços, office e ensino'
+  extras:
+    - label: Para serviços que vivem de recorrência
+      valor: +3.000 m²
+numerosDestaque:
+  - valor: '95'
+    prefixo: ''
+    sufixo: '%'
+    label: de ocupação
+  - valor: '190'
+    prefixo: ''
+    sufixo: ''
+    label: lojas
+  - valor: '53000'
+    prefixo: ''
+    sufixo: ' m²'
+    label: de ABL
+modelosEntrada:
+  - titulo: Lojista
+    descricao: >-
+      Abra a sua operação no hub de serviços do shopping: office, consultórios, clínicas,
+      coworking e ensino, em 3.000 m² com mix curado pela Nexa.
+    link: /empreendimentos/uberlandia-shopping/lojista
+mixOperacoes:
+  - pavimento: ''
+    categoria: Office
+    detalhe: Salas comerciais no hub de serviços
+  - pavimento: ''
+    categoria: Consultórios
+    detalhe: Espaços para atendimento profissional
+  - pavimento: ''
+    categoria: Clínicas
+    detalhe: Operações de saúde e bem-estar
+  - pavimento: ''
+    categoria: Coworking
+    detalhe: Estações compartilhadas e salas de reunião
+  - pavimento: ''
+    categoria: Ensino
+    detalhe: Cursos e formação profissional
+imagemCard: /images/empreendimentos/uberlandia-shopping.webp
+imagemHero: /images/empreendimentos/uberlandia-shopping.webp
+galeria: []
+endereco: Av. Paulo Gracindo, 15, Morada da Colina, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+Paulo+Gracindo%2C+15%2C+Morada+da+Colina%2C+Uberl%C3%A2ndia%2C+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: true
+  mostrarMix: true
+  mostrarGaleria: true
+  mostrarLocalizacao: true
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no HUB de serviços do Uberlândia Shopping.
+seo:
+  metaTitle: Uberlândia Shopping, HUB de serviços by Nexa
+  metaDescription: >-
+    HUB de serviços dentro do Uberlândia Shopping: office, consultórios, clínicas, coworking e
+    ensino em um empreendimento com 190 lojas e 95% de ocupação.
+tituloSobre: Localização estratégica
+tituloMix: Hubs de serviços

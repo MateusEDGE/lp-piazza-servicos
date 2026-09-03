@@ -1,0 +1,121 @@
+nome: Piazza Nicomedes
+temLandingPage: true
+status: comercializacao
+categoria: hub-conveniencia
+ordem: 1
+cidade: Uberlândia/MG
+zona: sul
+tiposOperacao:
+  - gastronomia
+  - servicos
+  - saude
+  - conveniencia
+atuacao:
+  - incorporacao
+  - masterplan
+  - desenvolvimento
+  - comercializacao
+localizacao: Ponto mais nobre e dinâmico de Uberlândia/MG
+resumoCard: >-
+  O novo hub de conveniência, serviços e gastronomia no ponto mais nobre de Uberlândia, com 50%
+  comercializado antes do início da obra.
+destaque: 50% comercializado antes do início da obra
+copy: >-
+  O Piazza Nicomedes está em fase avançada de desenvolvimento e contará com mais de 30 operações
+  comerciais estrategicamente distribuídas em um terreno de 4.000 m², com 6.300 m² de área de
+  construção e 134 vagas de estacionamento.
+
+
+  Localizado no ponto mais nobre e dinâmico de Uberlândia, o empreendimento nasce para se tornar
+  um novo hub de conveniência, serviços e gastronomia, combinando arquitetura eficiente, alta
+  visibilidade e performance comercial superior.
+papelNexa: Incorporação, concepção e desenvolvimento do projeto, masterplan e estruturação comercial.
+fichaTecnica:
+  terreno: 4.000 m²
+  abl: 6.300 m²
+  operacoes: '+30'
+  vagas: '134'
+  mix: Hub de conveniência, serviços e gastronomia
+numerosDestaque:
+  - valor: '50'
+    prefixo: ''
+    sufixo: '%'
+    label: comercializado antes do início da obra
+  - valor: '30'
+    prefixo: +
+    sufixo: ''
+    label: operações comerciais
+  - valor: '6300'
+    prefixo: ''
+    sufixo: ' m²'
+    label: de área de construção
+  - valor: '134'
+    prefixo: ''
+    sufixo: ''
+    label: vagas de estacionamento
+mixOperacoes:
+  - pavimento: Primeiro Pavimento
+    categoria: Saúde e bem-estar
+    detalhe: Clínicas, consultórios e studios
+  - pavimento: Térreo
+    categoria: Serviços
+    detalhe: Operações de alta recorrência para o dia a dia da região
+  - pavimento: Semi-enterrado
+    categoria: Gastronomia
+    detalhe: Restaurantes e cafés em praça ativa
+imagemCard: /images/empreendimentos/piazza-nicomedes.webp
+imagemHero: /images/empreendimentos/piazza-nicomedes.webp
+galeria:
+  - imagem: /images/empreendimentos/piazza-nicomedes-video-capa.webp
+    legenda: O projeto em vídeo
+    video: /video/piazza-nicomedes.mp4
+  - imagem: /images/empreendimentos/piazza-nicomedes-fachada.webp
+    legenda: Fachada e mix de lojas
+    video: null
+  - imagem: /images/empreendimentos/piazza-nicomedes-galeria-interna.webp
+    legenda: Galeria de acesso
+    video: null
+  - imagem: /images/empreendimentos/piazza-nicomedes-praca.webp
+    legenda: Praça de alimentação
+    video: null
+  - imagem: /images/empreendimentos/piazza-nicomedes-convivencia.webp
+    legenda: Área de convivência
+    video: null
+  - imagem: /images/empreendimentos/piazza-nicomedes-lojas-terreo.webp
+    legenda: Lojas no térreo
+    video: null
+  - imagem: /images/empreendimentos/piazza-nicomedes-varandas.webp
+    legenda: Varandas e jardins
+    video: null
+  - imagem: /images/empreendimentos/piazza-nicomedes-fachada-lateral.webp
+    legenda: Fachada lateral e acesso
+    video: null
+  - imagem: /images/empreendimentos/piazza-nicomedes-perspectiva.webp
+    legenda: Perspectiva geral
+    video: null
+endereco: Av. Nicomedes Alves dos Santos, 1950, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+Nicomedes+Alves+dos+Santos%2C+1950%2C+Uberl%C3%A2ndia%2C+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: true
+  mostrarMix: true
+  mostrarGaleria: true
+  mostrarLocalizacao: true
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Piazza Nicomedes.
+seo:
+  metaTitle: Piazza Nicomedes, o novo hub de conveniência de Uberlândia
+  metaDescription: >-
+    Mais de 30 operações comerciais no ponto mais nobre de Uberlândia. 6.300 m² de área de
+    construção, 134 vagas e 50% comercializado antes do início da obra.
+tituloMix: 3 Hubs disponíveis
+modelosEntrada:
+  - titulo: Lojista
+    descricao: Opere a sua marca dentro do empreendimento, com ponto próprio no mix de operações.
+    link: /empreendimentos/piazza-nicomedes/lojista
+  - titulo: Investidor
+    descricao: >-
+      Participe do pool financeiro do empreendimento e receba pela performance do ativo, sem
+      operar no local.
+    link: /empreendimentos/piazza-nicomedes/investidor

@@ -1,0 +1,42 @@
+nome: Av. Francisco Galassi
+temLandingPage: false
+status: desenvolvimento
+categoria: lojas-comerciais
+ordem: 16
+cidade: Uberlândia/MG
+zona: sul
+tiposOperacao:
+  - clinica
+  - farmacia
+  - restaurante
+atuacao: []
+localizacao: Morada da Colina, Uberlândia/MG
+resumoCard: Lojas comerciais em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. Francisco Galassi, Morada da Colina, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+Francisco+Galassi%2C+Morada+da+Colina%2C+Uberl%C3%A2ndia%2C+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse na Av. Francisco Galassi.
+seo:
+  metaTitle: Av. Francisco Galassi
+  metaDescription: Lojas comerciais em operação em Uberlândia.

@@ -1,0 +1,64 @@
+nome: Pátio Sabiá
+temLandingPage: false
+status: desenvolvimento
+categoria: lojas-comerciais
+ordem: 15
+cidade: Uberlândia/MG
+zona: leste
+tiposOperacao:
+  - academia
+atuacao: []
+localizacao: Tibery, Uberlândia/MG
+resumoCard: Lojas comerciais em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: /images/empreendimentos/patio-sabia.webp
+imagemHero: /images/empreendimentos/patio-sabia.webp
+galeria:
+  - imagem: /images/empreendimentos/patio-sabia.webp
+    legenda: Fachada e acesso principal
+    video: null
+  - imagem: /images/empreendimentos/patio-sabia-calcadao.webp
+    legenda: Calçadão do Pátio
+    video: null
+  - imagem: /images/empreendimentos/patio-sabia-praca-alimentacao.webp
+    legenda: Praça de alimentação
+    video: null
+  - imagem: /images/empreendimentos/patio-sabia-gastronomia.webp
+    legenda: Operações de gastronomia
+    video: null
+  - imagem: /images/empreendimentos/patio-sabia-mercado.webp
+    legenda: Mercado e adega
+    video: null
+  - imagem: /images/empreendimentos/patio-sabia-mercatto.webp
+    legenda: Mercatto
+    video: null
+  - imagem: /images/empreendimentos/patio-sabia-circulacao.webp
+    legenda: Circulação entre os pavimentos
+    video: null
+  - imagem: /images/empreendimentos/patio-sabia-lojas.webp
+    legenda: Lojas no calçadão externo
+    video: null
+endereco: Av. Gov. Anselmo Alves dos Santos, Tibery, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.9096109,-48.2484619&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: true
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Pátio Sabiá.
+seo:
+  metaTitle: Pátio Sabiá
+  metaDescription: Lojas comerciais em operação em Uberlândia.

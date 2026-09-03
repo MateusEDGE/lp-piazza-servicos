@@ -1,0 +1,51 @@
+nome: Av. Guilherme Ferreira
+temLandingPage: false
+status: desenvolvimento
+categoria: lojas-comerciais
+ordem: 20
+cidade: Uberaba/MG
+zona: ''
+tiposOperacao:
+  - academia
+  - auto-center
+  - banco
+  - concessionaria
+  - educacao
+  - entretenimento
+  - farmacia
+  - fast-food
+  - home-center
+  - pet-shop
+  - restaurante
+  - supermercado
+atuacao: []
+localizacao: Cidade Jardim, Uberaba/MG
+resumoCard: Lojas comerciais em desenvolvimento em Uberaba.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. Guilherme Ferreira, Cidade Jardim, Uberaba/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-19.762572,-47.935729&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse na Av. Guilherme Ferreira.
+seo:
+  metaTitle: Av. Guilherme Ferreira
+  metaDescription: Lojas comerciais em operação em Uberaba.

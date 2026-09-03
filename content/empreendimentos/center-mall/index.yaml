@@ -1,0 +1,44 @@
+nome: Center Mall
+temLandingPage: false
+status: operacao
+categoria: strip-mall
+ordem: 13
+cidade: Uberlândia/MG
+zona: oeste
+tiposOperacao:
+  - banco
+  - fast-food
+  - pet-shop
+  - restaurante
+  - varejo
+atuacao: []
+localizacao: Jardim Patrícia, Uberlândia/MG
+resumoCard: Strip mall em operação em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. José Fonseca e Silva, Jardim Patrícia, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.915373,-48.3285057&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Center Mall.
+seo:
+  metaTitle: Center Mall
+  metaDescription: Strip mall em operação em Uberlândia.

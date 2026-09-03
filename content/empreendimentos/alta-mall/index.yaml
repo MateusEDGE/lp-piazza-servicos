@@ -1,0 +1,42 @@
+nome: Alta Mall
+temLandingPage: false
+status: desenvolvimento
+categoria: lojas-comerciais
+ordem: 19
+cidade: Uberlândia/MG
+zona: sul
+tiposOperacao:
+  - clinica
+  - restaurante
+  - varejo
+atuacao: []
+localizacao: Morada da Colina, Uberlândia/MG
+resumoCard: Lojas comerciais em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Rua Tobias Barreto, Morada da Colina, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.939688,-48.279110&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Alta Mall.
+seo:
+  metaTitle: Alta Mall
+  metaDescription: Lojas comerciais em operação em Uberlândia.

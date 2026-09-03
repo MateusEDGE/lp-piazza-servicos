@@ -1,0 +1,51 @@
+nome: Av. Maranhão
+temLandingPage: false
+status: desenvolvimento
+categoria: strip-mall
+ordem: 12
+cidade: Uberaba/MG
+zona: ''
+tiposOperacao:
+  - academia
+  - auto-center
+  - banco
+  - clinica
+  - concessionaria
+  - educacao
+  - entretenimento
+  - escritorio
+  - farmacia
+  - fast-food
+  - home-center
+  - restaurante
+atuacao: []
+localizacao: Vila Santa Inês, Uberaba/MG
+resumoCard: Strip mall em desenvolvimento em Uberaba.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. Maranhão, Vila Santa Inês, Uberaba/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-19.758324,-47.948813&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse na Av. Maranhão.
+seo:
+  metaTitle: Av. Maranhão
+  metaDescription: Strip mall em desenvolvimento em Uberaba.

@@ -1,0 +1,50 @@
+nome: Av. João Naves
+temLandingPage: false
+status: desenvolvimento
+categoria: strip-mall
+ordem: 8
+cidade: Uberlândia/MG
+zona: leste
+tiposOperacao:
+  - academia
+  - auto-center
+  - banco
+  - concessionaria
+  - entretenimento
+  - farmacia
+  - fast-food
+  - home-center
+  - pet-shop
+  - restaurante
+  - supermercado
+atuacao: []
+localizacao: Santa Mônica, Uberlândia/MG
+resumoCard: Strip mall em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. João Naves de Ávila, Santa Mônica, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.929708,-48.241770&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse na Av. João Naves.
+seo:
+  metaTitle: Av. João Naves
+  metaDescription: Strip mall em desenvolvimento em Uberlândia.

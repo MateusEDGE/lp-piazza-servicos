@@ -1,0 +1,69 @@
+headline: Transformamos áreas em ativos comerciais rentáveis.
+subheadline: >-
+  Especialistas no desenvolvimento de centros comerciais, strip malls e empreendimentos de
+  conveniência, combinando inteligência de mercado, rigor jurídico e viabilidade financeira. Do
+  estudo vocacional à gestão da operação.
+etapasHero:
+  - tag: Quem somos
+    titulo: Inteligência de mercado em cada metro quadrado
+    texto: >-
+      Desenvolvemos espaços comerciais inteligentes e gerimos ativos com foco em performance,
+      relacionamento e resultados sustentáveis.
+  - tag: O que fazemos
+    titulo: Conectamos marcas, ativos e experiências que geram valor.
+    texto: >-
+      Desenvolvimento, incorporação e gestão de ativos: um ciclo executado de ponta a ponta
+      com os nossos parceiros.
+numeros:
+  - valor: '18'
+    prefixo: ''
+    sufixo: ''
+    label: Anos de experiência combinada
+  - valor: '4'
+    prefixo: ''
+    sufixo: ''
+    label: Estados brasileiros
+  - valor: '20'
+    prefixo: +
+    sufixo: ''
+    label: Parceiros estratégicos
+  - valor: '5'
+    prefixo: ''
+    sufixo: ''
+    label: Strip malls
+  - valor: '30'
+    prefixo: +
+    sufixo: ''
+    label: BTS entregues
+  - valor: '400'
+    prefixo: +
+    sufixo: ''
+    label: Imóveis comerciais locados
+pilares:
+  - titulo: Desenvolvimento
+    texto: >-
+      Transformamos terrenos e áreas subutilizadas em empreendimentos comerciais rentáveis
+      através de estudos de vocação, masterplan e análise de viabilidade técnica e financeira,
+      análise de potenciais varejistas e ancoragem.
+    icone: projetos
+  - titulo: Incorporação
+    texto: >-
+      Conectamos terrenistas, investidores e lojistas através de modelos de parceria
+      customizados, negociando e formalizando acordos que maximizam o retorno para todas as
+      partes.
+    icone: negocios
+  - titulo: Gestão de Ativos
+    texto: >-
+      Gerenciamos desde o acompanhamento de obras até a comercialização completa das unidades,
+      garantindo ocupação qualificada e performance sustentável. Atuamos na gestão completa do
+      empreendimento após a conclusão das obras: carteira, fundo de promoção e condomínio, de
+      ponta a ponta com os nossos parceiros.
+    icone: operacao
+empreendimentosDestaque:
+  - piazza-nicomedes
+  - villa-viseu
+  - uberlandia-shopping
+ctaTitulo: '*Terreno*, *investimento* ou *expansão*?'
+ctaTexto: >-
+  A Nexa trabalha com quem tem a área, com quem quer investir e com as marcas que procuram o
+  próximo ponto. Agende uma conversa com o nosso time.

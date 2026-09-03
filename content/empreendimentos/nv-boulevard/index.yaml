@@ -1,0 +1,72 @@
+nome: NV Boulevard
+temLandingPage: false
+status: operacao
+categoria: lojas-comerciais
+ordem: 14
+cidade: Uberlândia/MG
+zona: sul
+tiposOperacao:
+  - clinica
+  - pet-shop
+  - supermercado
+atuacao: []
+localizacao: Morada da Colina, Uberlândia/MG
+resumoCard: Lojas comerciais em operação em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: /images/empreendimentos/nv-boulevard.webp
+imagemHero: /images/empreendimentos/nv-boulevard.webp
+galeria:
+  - imagem: /images/empreendimentos/nv-boulevard.webp
+    legenda: Fachada principal e acesso
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-fachada-lateral.webp
+    legenda: Fachada lateral ao entardecer
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-boulevard.webp
+    legenda: Boulevard central coberto
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-boulevard-pessoas.webp
+    legenda: Circulação entre as lojas
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-espelho-dagua.webp
+    legenda: Espelho d'água e área de convivência
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-area-gourmet.webp
+    legenda: Área gourmet
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-lojas.webp
+    legenda: Lojas e jardins suspensos
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-estacionamento.webp
+    legenda: Estacionamento em frente às lojas
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-aerea.webp
+    legenda: Vista aérea do empreendimento
+    video: null
+  - imagem: /images/empreendimentos/nv-boulevard-implantacao.webp
+    legenda: Implantação e entorno
+    video: null
+endereco: Av. dos Vinhedos, 90, Morada da Colina, Uberlândia/MG, 38411-159
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+dos+Vinhedos%2C+90%2C+Morada+da+Colina%2C+Uberl%C3%A2ndia%2C+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: true
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no NV Boulevard.
+seo:
+  metaTitle: NV Boulevard
+  metaDescription: Lojas comerciais em operação em Uberlândia.

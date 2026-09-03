@@ -1,0 +1,89 @@
+nome: Bluemall
+temLandingPage: true
+status: operacao
+ordem: 4
+localizacao: Principal avenida de Uberlândia/MG
+resumoCard: >-
+  Strip mall de última geração na principal avenida de Uberlândia, com 12 lojas curadas, âncora
+  de academia e 98% de ocupação em 4 meses.
+destaque: 98% de ocupação em 4 meses de inauguração
+copy: >-
+  Strip mall de última geração, posicionado na principal avenida de Uberlândia/MG, em um terreno
+  de 5.200 m² com 3.500 m² de área de construção e 113 vagas de estacionamento, altamente
+  eficiente.
+
+
+  O empreendimento reúne 12 lojas cuidadosamente curadas, com academia como âncora responsável
+  por gerar fluxo contínuo e fortalecer o destino comercial, além das lojas satélites que
+  completam o mix com conveniência, gastronomia e serviços de alta demanda.
+papelNexa: >-
+  Desenvolvimento do projeto, definição do mix, comercialização e estruturação do
+  empreendimento.
+fichaTecnica:
+  terreno: 5.200 m²
+  abl: 3.500 m²
+  operacoes: '12'
+  vagas: '113'
+  mix: Conveniência, gastronomia e serviços de alta demanda
+numerosDestaque:
+  - valor: '98'
+    prefixo: ''
+    sufixo: '%'
+    label: de ocupação em 4 meses de inauguração
+  - valor: '12'
+    prefixo: ''
+    sufixo: ''
+    label: lojas
+  - valor: '113'
+    prefixo: ''
+    sufixo: ''
+    label: vagas de estacionamento
+  - valor: '3500'
+    prefixo: ''
+    sufixo: ' m²'
+    label: de área de construção
+mixOperacoes:
+  - categoria: Academia
+    detalhe: Âncora responsável pelo fluxo contínuo do mall
+  - categoria: Conveniência
+    detalhe: Operações de alta frequência para o dia a dia
+  - categoria: Gastronomia
+    detalhe: Cafés e restaurantes de rua na principal avenida
+imagemCard: /images/empreendimentos/bluemall.webp
+imagemHero: /images/empreendimentos/bluemall.webp
+galeria: []
+endereco: Av. Rondon Pacheco, 1444, Altamira, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+Rondon+Pacheco%2C+1444%2C+Altamira%2C+Uberl%C3%A2ndia%2C+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: true
+  mostrarMix: true
+  mostrarGaleria: true
+  mostrarLocalizacao: true
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Bluemall.
+seo:
+  metaTitle: Bluemall, strip mall na principal avenida de Uberlândia
+  metaDescription: >-
+    Strip mall de última geração na Av. Rondon Pacheco: 12 lojas, academia como âncora, 3.500 m²
+    de área de construção e 98% de ocupação em 4 meses de inauguração.
+categoria: strip-mall
+cidade: Uberlândia/MG
+zona: central
+tiposOperacao:
+  - academia
+  - conveniencia
+  - gastronomia
+  - restaurante
+atuacao:
+  - desenvolvimento
+  - curadoria-mix
+  - comercializacao
+ancoras: Academia
+entregas:
+  - Apoio ao desenvolvimento do mall
+  - Estratégia comercial e ancoragem
+  - Conceito de posicionamento e comunicação
+  - Projeto de sinalização
+tituloSobre: Localização estratégica

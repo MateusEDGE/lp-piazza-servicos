@@ -1,0 +1,47 @@
+nome: Pátio Belvedere
+temLandingPage: false
+status: desenvolvimento
+categoria: lojas-comerciais
+ordem: 17
+cidade: Uberlândia/MG
+zona: oeste
+tiposOperacao:
+  - banco
+  - clinica
+  - educacao
+  - escritorio
+  - farmacia
+  - pet-shop
+  - restaurante
+  - varejo
+atuacao: []
+localizacao: Tubalina, Uberlândia/MG
+resumoCard: Lojas comerciais em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. Getúlio Vargas, Tubalina, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.929354,-48.299919&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Pátio Belvedere.
+seo:
+  metaTitle: Pátio Belvedere
+  metaDescription: Lojas comerciais em operação em Uberlândia.

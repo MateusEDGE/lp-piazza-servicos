@@ -1,0 +1,49 @@
+nome: Av. Vinhedos
+temLandingPage: false
+status: desenvolvimento
+categoria: strip-mall
+ordem: 10
+cidade: Uberlândia/MG
+zona: sul
+tiposOperacao:
+  - academia
+  - banco
+  - clinica
+  - concessionaria
+  - educacao
+  - escritorio
+  - farmacia
+  - fast-food
+  - pet-shop
+  - restaurante
+atuacao: []
+localizacao: Morada da Colina, Uberlândia/MG
+resumoCard: Strip mall em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. dos Vinhedos, Morada da Colina, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.951145,-48.278869&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse na Av. Vinhedos.
+seo:
+  metaTitle: Av. Vinhedos
+  metaDescription: Strip mall em desenvolvimento em Uberlândia.

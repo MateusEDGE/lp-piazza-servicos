@@ -1,0 +1,78 @@
+nome: Mall Silvio Rugani
+temLandingPage: true
+status: desenvolvimento
+categoria: strip-mall
+ordem: 6
+cidade: Uberlândia/MG
+zona: oeste
+tiposOperacao:
+  - supermercado
+  - gastronomia
+  - restaurante
+  - saude
+  - academia
+  - conveniencia
+  - servicos
+atuacao:
+  - desenvolvimento
+  - curadoria-mix
+  - comercializacao
+localizacao: Tubalina, Uberlândia/MG
+resumoCard: >-
+  Strip mall na região Sul de Uberlândia, em parceria com a Maqnelson, conectado a um dos
+  maiores acessos para a região Oeste da cidade.
+destaque: 50% das âncoras contratadas antes do início da obra
+copy: >-
+  Strip mall localizado na região Sul de Uberlândia, conectado a um dos maiores acessos para a
+  região Oeste da cidade. Em um terreno de 6.200 m² com 4.000 m² de ABL, o empreendimento
+  reunirá 15 operações de gastronomia, serviços e conveniência, incluindo praça de alimentação,
+  academia e supermercado. O empreendimento é desenvolvido em parceria entre a Nexa Malls e a
+  Maqnelson.
+papelNexa: >-
+  Empreendimento desenvolvido em parceria com a Maqnelson. A Nexa conduz o desenvolvimento do
+  projeto, a definição do mix, a comercialização e a estruturação do empreendimento.
+fichaTecnica:
+  terreno: 6.200 m²
+  abl: 4.000 m²
+  operacoes: '15'
+  vagas: ''
+  mix: Strip mall de gastronomia, serviços e conveniência
+numerosDestaque:
+  - valor: '50'
+    prefixo: ''
+    sufixo: '%'
+    label: das âncoras antes do início da obra
+  - valor: '15'
+    prefixo: ''
+    sufixo: ''
+    label: operações projetadas
+  - valor: '4000'
+    prefixo: ''
+    sufixo: ' m²'
+    label: de ABL
+mixOperacoes:
+  - categoria: Supermercado
+    detalhe: Âncora de fluxo diário
+  - categoria: Gastronomia
+    detalhe: Praça de alimentação
+  - categoria: Saúde e serviços
+    detalhe: Academia e operações de conveniência
+imagemCard: /images/empreendimentos/mall-silvio-rugani.webp
+imagemHero: /images/empreendimentos/mall-silvio-rugani.webp
+galeria: []
+endereco: Av. Sílvio Rugani, 204, Tubalina, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+S%C3%ADlvio+Rugani%2C+204%2C+Tubalina%2C+Uberl%C3%A2ndia%2C+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: true
+  mostrarMix: true
+  mostrarGaleria: true
+  mostrarLocalizacao: true
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Mall Silvio Rugani.
+seo:
+  metaTitle: Mall Silvio Rugani, strip mall na região Sul de Uberlândia
+  metaDescription: >-
+    Strip mall em desenvolvimento na região Sul de Uberlândia com 15 operações de gastronomia,
+    serviços e conveniência. 50% das âncoras contratadas antes da obra.

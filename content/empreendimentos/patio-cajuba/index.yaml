@@ -1,0 +1,40 @@
+nome: Pátio Cajubá
+temLandingPage: false
+status: desenvolvimento
+categoria: lojas-comerciais
+ordem: 18
+cidade: Uberlândia/MG
+zona: sul
+tiposOperacao:
+  - restaurante
+atuacao: []
+localizacao: Vigilato Pereira, Uberlândia/MG
+resumoCard: Lojas comerciais em desenvolvimento em Uberlândia.
+destaque: ''
+copy: ''
+papelNexa: ''
+fichaTecnica:
+  terreno: ''
+  abl: ''
+  operacoes: ''
+  vagas: ''
+  mix: ''
+numerosDestaque: []
+mixOperacoes: []
+imagemCard: null
+imagemHero: null
+galeria: []
+endereco: Av. Eduardo Felice, Vigilato Pereira, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=-18.930005,-48.275170&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: false
+  mostrarMix: false
+  mostrarGaleria: false
+  mostrarLocalizacao: false
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Pátio Cajubá.
+seo:
+  metaTitle: Pátio Cajubá
+  metaDescription: Lojas comerciais em operação em Uberlândia.

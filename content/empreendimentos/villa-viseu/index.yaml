@@ -1,0 +1,96 @@
+nome: Villa Viseu
+temLandingPage: true
+status: operacao
+ordem: 2
+localizacao: Granja Marileusa, Uberlândia/MG
+resumoCard: >-
+  Open mall com mais de 68 lojas no bairro planejado Granja Marileusa, com 95% de ocupação sob
+  gestão Nexa.
+destaque: 95% de ocupação sob nossa gestão
+copy: >-
+  Open mall localizado no bairro planejado Granja Marileusa, conectado a um ecossistema de
+  negócios e networking. São mais de 68 lojas em 6.000 m² de área de construção, em um terreno
+  de 11.000 m² com mais de 220 vagas de estacionamento.
+
+
+  O mix reúne gastronomia, serviços e conveniência, com academia, farmácia e lojas de rede como
+  âncoras, em um dos endereços mais inovadores de Uberlândia.
+papelNexa: >-
+  A Nexa faz a gestão completa do empreendimento: gestão de carteira, fundo de promoção e
+  condomínio, mantendo a operação em pleno funcionamento e criando ativações e novas
+  oportunidades de negócios.
+fichaTecnica:
+  terreno: 11.000 m²
+  abl: 6.000 m²
+  operacoes: '+68'
+  vagas: 220+
+  mix: Open mall de gastronomia, serviços e conveniência
+numerosDestaque:
+  - valor: '95'
+    prefixo: ''
+    sufixo: '%'
+    label: de ocupação sob nossa gestão
+  - valor: '68'
+    prefixo: +
+    sufixo: ''
+    label: lojas
+  - valor: '220'
+    prefixo: +
+    sufixo: ''
+    label: vagas de estacionamento
+  - valor: '6000'
+    prefixo: ''
+    sufixo: ' m²'
+    label: de área de construção
+modelosEntrada:
+  - titulo: Lojista
+    descricao: >-
+      Abra a sua operação no open mall da Granja Marileusa: gastronomia, saúde e bem-estar ou
+      conveniência, num endereço com mais de 68 lojas e 95% de ocupação.
+    link: /empreendimentos/villa-viseu/lojista
+mixOperacoes:
+  - categoria: Gastronomia
+    detalhe: Praça de alimentação e restaurantes
+  - categoria: Saúde e bem-estar
+    detalhe: Academia e serviços de rotina
+  - categoria: Conveniência
+    detalhe: Operações de alta frequência para o bairro planejado
+imagemCard: /images/empreendimentos/villa-viseu.webp
+imagemHero: /images/empreendimentos/villa-viseu.webp
+galeria: []
+endereco: Av. Maria Silva Garcia, 286, Granja Marileusa, Uberlândia/MG
+mapaEmbedUrl: https://www.google.com/maps?q=Av.+Maria+Silva+Garcia,+286,+Uberl%C3%A2ndia+-+MG&output=embed
+arte:
+  accentColor: bronze
+  heroVariant: imersivo
+secoes:
+  mostrarFicha: true
+  mostrarMix: true
+  mostrarGaleria: true
+  mostrarLocalizacao: true
+whatsappMensagem: Olá! Vim pelo site da Nexa Malls e tenho interesse no Villa Viseu.
+seo:
+  metaTitle: Villa Viseu, open mall na Granja Marileusa
+  metaDescription: >-
+    Open mall com 68 operações de gastronomia, serviços e conveniência no bairro planejado
+    Granja Marileusa, em Uberlândia. 90% de ocupação sob gestão Nexa.
+categoria: open-mall
+cidade: Uberlândia/MG
+zona: leste
+tiposOperacao:
+  - gastronomia
+  - restaurante
+  - saude
+  - academia
+  - conveniencia
+atuacao:
+  - gestao
+  - comercializacao
+  - curadoria-mix
+ancoras: Academia, farmácia e lojas de rede
+entregas:
+  - Gestão completa do empreendimento
+  - Gestão de carteira de lojistas
+  - Fundo de promoção e condomínio
+  - Ativações e novas oportunidades de negócio
+tituloSobre: Gestão de sucesso
