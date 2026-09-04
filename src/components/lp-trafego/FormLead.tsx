@@ -3,7 +3,13 @@
 import { useId, useState } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionShell } from "@/components/ui/SectionShell";
-import { capturarOrigem, linkLead, registrarLead, type Lead } from "@/lib/leads";
+import {
+  capturarOrigem,
+  empurrarEventoLead,
+  linkLead,
+  registrarLead,
+  type Lead,
+} from "@/lib/leads";
 import type { AtivoLp, PublicoLp } from "./types";
 
 /**
@@ -79,6 +85,13 @@ export function FormLead({
     setErro(null);
 
     const lead = montarLead();
+
+    // Antes do `window.open`, e não depois: o push é síncrono e não custa
+    // nada, mas qualquer coisa entre o clique e a abertura da janela é risco
+    // de o navegador tratar o pop-up como não solicitado. O slug do ativo é o
+    // que o GTM espera; `ativo.nome` continua sendo o que o comercial lê.
+    empurrarEventoLead(lead, ativo.slug);
+
     window.open(
       linkLead(lead, ativo.whatsappNumero),
       "_blank",

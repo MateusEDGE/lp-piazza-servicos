@@ -137,3 +137,62 @@ export function registrarLead(lead: Lead): void {
     console.error("Falha ao registrar lead", erro);
   });
 }
+
+/**
+ * O `dataLayer` do Google Tag Manager, como este projeto o usa.
+ *
+ * Declarado aqui, e não com um `as any` em cada formulário, porque o contrato
+ * com o container é de chaves — errar o nome de uma delas não quebra nada
+ * visível, só faz o evento de Lead parar de disparar no pixel, em silêncio.
+ * Com o tipo no lugar, o compilador cobra o formato.
+ */
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
+/**
+ * Avisa o GTM de que um lead foi enviado.
+ *
+ * O container GTM-WX4QVX4P escuta o evento `lead_enviado` e é ele quem dispara
+ * o evento de Lead no Meta Pixel — nenhum snippet de pixel é instalado no
+ * código, senão o evento sairia duplicado. Daí em diante, ajuste de
+ * rastreamento se faz no GTM, sem tocar aqui.
+ *
+ * **As chaves abaixo são contrato com as variáveis do container.** Renomear
+ * qualquer uma delas derruba o disparo do Lead, e o formulário continuará
+ * parecendo saudável — por isso elas não seguem o português do resto do
+ * arquivo: são o nome que o outro lado já espera.
+ *
+ * A chamada é síncrona e acontece **antes** do `window.open` de quem chama: o
+ * push é só um `Array.push` em memória, não espera rede, e assim o pop-up do
+ * WhatsApp continua abrindo dentro do gesto do clique — que é a única coisa
+ * que o bloqueador do navegador aceita.
+ *
+ * Os campos `lead_*` alimentam a correspondência avançada do pixel. O próprio
+ * pixel hasheia esses valores (SHA-256) no navegador antes de enviar: nenhum
+ * dado pessoal trafega em claro, e hashear aqui só faria o Meta descartar o
+ * dado por hashear duas vezes.
+ *
+ * `empreendimentoSlug` vem separado do `Lead` de propósito. O lead carrega o
+ * empreendimento pelo nome de exibição ("Piazza Nicomedes"), que é o que o
+ * comercial lê no WhatsApp; o GTM quer o identificador estável do CMS
+ * ("piazza-nicomedes"). Quem chama tem os dois à mão e passa o certo.
+ */
+export function empurrarEventoLead(lead: Lead, empreendimentoSlug: string): void {
+  if (typeof window === "undefined") return;
+
+  window.dataLayer = window.dataLayer ?? [];
+  window.dataLayer.push({
+    event: "lead_enviado",
+    empreendimento: empreendimentoSlug,
+    publico: lead.publico,
+    lp_origem: lead.lpOrigem,
+    lead_nome: lead.nome,
+    lead_email: lead.email,
+    // Só dígitos: o GTM é quem acrescenta o código do país antes de entregar
+    // ao pixel.
+    lead_telefone: lead.telefone.replace(/\D/g, ""),
+  });
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Chakra_Petch } from "next/font/google";
+import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
 import { RodapeLp } from "@/components/layout/RodapeLp";
 import { TopoLp } from "@/components/layout/TopoLp";
 import { LpThemeProvider } from "@/components/lp/LpThemeProvider";
@@ -40,6 +41,11 @@ export default async function RootLayout({
   return (
     <html lang="pt-BR" className={chakra.variable}>
       <body className="font-sans">
+        {/* A landing recebe clique pago: sem o contêiner aqui, a campanha
+            gasta sem conseguir medir uma conversão sequer. A meta tag de
+            verificação de domínio não vem junto — ela é do site, e verificar
+            o domínio raiz já cobre os subdomínios destas landings. */}
+        <GoogleTagManager />
         <LpThemeProvider accent={ativo.accent}>
           <TopoLp
             whatsappNumero={ativo.whatsappNumero}
