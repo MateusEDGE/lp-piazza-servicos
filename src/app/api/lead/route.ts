@@ -1,22 +1,22 @@
 import type { Lead } from "@/lib/leads";
+import { registrarLeadNoZaper } from "@/lib/zaper";
 
 /**
- * Encaminha o lead do formulário para o Zaper, do lado do servidor.
+ * Registra o lead do formulário no Zaper, do lado do servidor.
  *
  * `registrarLead` (`src/lib/leads.ts`) chama esta rota sem esperar resposta: o
- * WhatsApp já abriu no mesmo gesto do clique, e o registro no CRM do cliente
- * corre por fora, sem segurar a conversão. Aqui dentro, sim, o envio ao Zaper
- * é aguardado — é o servidor quem guarda a URL do webhook, ela nunca vai para
- * o navegador, e só depois de tentar o envio a função pode ser encerrada.
+ * WhatsApp já abriu no mesmo gesto do clique, e o registro no CRM corre por
+ * fora, sem segurar a conversão. Aqui dentro, sim, o envio é aguardado — é o
+ * servidor quem guarda o token do Zaper, ele nunca vai para o navegador, e só
+ * depois de tentar o registro a função pode ser encerrada.
  *
- * Sem `ZAPER_WEBHOOK_URL` configurada, o lead cai só no log do servidor: a
- * página continua funcionando normalmente (o WhatsApp já entregou o lead ao
+ * Até 09/2026 esta rota repassava o lead a um webhook do Make, que criava o
+ * contato pelo app do wts.chat. Hoje ela fala com a API do Zaper direto — ver
+ * `src/lib/zaper.ts` para o porquê e para as armadilhas dessa API.
+ *
+ * Sem `ZAPER_API_TOKEN` configurada, o lead cai só no log do servidor: a página
+ * continua funcionando normalmente (o WhatsApp já entregou o lead ao
  * comercial), e falta só a variável de ambiente para o Zaper também recebê-lo.
- *
- * `ZAPER_WEBHOOK_TOKEN` é opcional, para o dia em que o Zaper (ou o Zapier no
- * meio do caminho, se for esse o desenho escolhido) exigir autenticação: com
- * ela definida, viaja como `Authorization: Bearer <token>`; sem ela, a
- * requisição sai sem esse cabeçalho.
  */
 export async function POST(request: Request) {
   let lead: unknown;
@@ -30,40 +30,34 @@ export async function POST(request: Request) {
     return new Response("Lead incompleto", { status: 400 });
   }
 
-  const webhook = process.env.ZAPER_WEBHOOK_URL;
-  if (!webhook) {
-    console.error("ZAPER_WEBHOOK_URL não configurada; lead não encaminhado:", lead);
-    return Response.json({ ok: true, encaminhado: false });
+  if (!process.env.ZAPER_API_TOKEN) {
+    console.error("ZAPER_API_TOKEN não configurada; lead não registrado:", lead);
+    return Response.json({ ok: true, registrado: false });
   }
-
-  const token = process.env.ZAPER_WEBHOOK_TOKEN;
-  const headers: Record<string, string> = { "content-type": "application/json" };
-  if (token) headers.authorization = `Bearer ${token}`;
 
   try {
-    const resposta = await fetch(webhook, {
-      method: "POST",
-      headers,
-      body: JSON.stringify(lead),
-      // O outro lado processa o lead depois de responder; 8s é folga de sobra
-      // para a ida e volta, e evita segurar a function presa a um hook fora do ar.
-      signal: AbortSignal.timeout(8000),
-    });
-    if (!resposta.ok) {
-      console.error(`Webhook do Zaper respondeu ${resposta.status} para o lead:`, lead);
-    }
+    const resultado = await registrarLeadNoZaper(lead);
+    console.log(
+      `Lead de ${lead.lpOrigem} registrado no Zaper: contato ${resultado.contatoId}` +
+        `${resultado.contatoReaproveitado ? " (já existia)" : ""}` +
+        `, card ${resultado.cardId ?? "não criado"}` +
+        `, etiqueta ${resultado.etiqueta ?? "nenhuma"}`,
+    );
+    return Response.json({ ok: true, registrado: true });
   } catch (erro) {
-    console.error("Falha ao encaminhar lead para o Zaper:", erro);
+    // Falha aqui não vira erro para o navegador de propósito: o lead já está
+    // com o comercial pelo WhatsApp, e devolver 500 só faria o console da
+    // página acusar um problema que não é do visitante.
+    console.error("Falha ao registrar lead no Zaper:", erro);
+    return Response.json({ ok: true, registrado: false });
   }
-
-  return Response.json({ ok: true, encaminhado: true });
 }
 
 /**
- * Guarda mínima antes de repassar ao Zaper.
+ * Guarda mínima antes de falar com o Zaper.
  *
  * Não valida tudo que `FormLead` já validou no cliente (isso duplicaria regra
- * de UI numa rota de API) — só o suficiente para não encaminhar lixo caso a
+ * de UI numa rota de API) — só o suficiente para não registrar lixo caso a
  * rota seja chamada fora do formulário: precisa parecer um `Lead`, com nome e
  * telefone preenchidos.
  */
