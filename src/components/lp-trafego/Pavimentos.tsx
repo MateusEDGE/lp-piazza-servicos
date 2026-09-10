@@ -26,77 +26,104 @@ export function Pavimentos({
   tone?: "tint" | "none";
 }) {
   const escuro = tone === "none";
+
+  /**
+   * Quando o vídeo do projeto subiu para o hero, esta seção fica sem mídia.
+   *
+   * A coluna da direita existia para o vídeo (ou, sem ele, para uma foto do
+   * empreendimento). Com o vídeo no hero, cair na foto trazia para cá a arte de
+   * um hub específico — na página do investidor, a fachada do hub gastronômico
+   * ao lado de um texto que fala dos três. Sem mídia, a seção vira o que ela é:
+   * o texto de um lado e os pavimentos do outro.
+   */
+  const semImagem = Boolean(publico.hero.tituloVideo);
+
+  const cabecalho = (
+    <Reveal>
+      <p className="label-editorial text-lp-accent">O empreendimento</p>
+      <h2
+        className={`display-editorial mt-4 ${escuro ? "text-white" : "text-nexa-ink"}`}
+      >
+        {publico.tituloPavimentos ?? "Três pavimentos, três vocações"}
+      </h2>
+      <p
+        className={`mt-6 max-w-xl text-[17px] leading-relaxed ${escuro ? "text-white/80" : "text-nexa-soft"}`}
+      >
+        {publico.textoPavimentos ??
+          `Cada pavimento do ${ativo.nome} tem uma vocação definida no masterplan, e é a soma delas que faz o mesmo cliente vir mais de uma vez por semana.`}
+      </p>
+    </Reveal>
+  );
+
+  const pavimentos = (
+    <ul className={semImagem ? "space-y-3" : "mt-10 space-y-3"}>
+      {publico.pavimentos.map((p, i) => (
+        <li key={p.pavimento}>
+          <Reveal delay={0.08 + i * 0.06}>
+            <Tilt grau={10} escala={1.02}>
+              <div
+                className={`flex flex-wrap items-baseline gap-x-4 gap-y-2 rounded-[var(--radius-brand)] border p-5 shadow-[0_14px_36px_-26px_rgba(14,20,48,0.8)] transition-colors duration-300 motion-reduce:transition-none md:p-6 ${
+                  p.destaque
+                    ? "border-lp-accent bg-lp-accent-soft"
+                    : escuro
+                      ? "border-white/12 bg-white/[0.06]"
+                      : "border-nexa-ink/10 bg-white"
+                }`}
+              >
+                <span
+                  className={`text-[11px] font-bold uppercase tracking-[0.18em] ${escuro ? "text-white/50" : "text-nexa-mist"}`}
+                >
+                  {p.pavimento}
+                </span>
+                <h3
+                  className={`heading-nexa text-[1.4rem] md:text-[1.6rem] ${escuro ? "text-white" : "text-nexa-ink"}`}
+                >
+                  {p.categoria}
+                </h3>
+                {p.destaque && (
+                  <span className="rounded-full bg-lp-accent px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-lp-accent-contrast">
+                    Seu andar
+                  </span>
+                )}
+                <p
+                  className={`w-full text-[15px] leading-relaxed ${escuro ? "text-white/75" : "text-nexa-soft"}`}
+                >
+                  {p.detalhe}
+                </p>
+              </div>
+            </Tilt>
+          </Reveal>
+        </li>
+      ))}
+    </ul>
+  );
+
+  if (semImagem) {
+    return (
+      <SectionShell tone={tone} compacto>
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div>{cabecalho}</div>
+          <div>{pavimentos}</div>
+        </div>
+      </SectionShell>
+    );
+  }
+
   return (
     <SectionShell tone={tone} compacto>
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16">
         <div>
-          <Reveal>
-            <p className="label-editorial text-lp-accent">O empreendimento</p>
-            <h2
-              className={`display-editorial mt-4 ${escuro ? "text-white" : "text-nexa-ink"}`}
-            >
-              {publico.tituloPavimentos ?? "Três pavimentos, três vocações"}
-            </h2>
-            <p
-              className={`mt-6 max-w-xl text-[17px] leading-relaxed ${escuro ? "text-white/80" : "text-nexa-soft"}`}
-            >
-              {publico.textoPavimentos ??
-                `Cada pavimento do ${ativo.nome} tem uma vocação definida no masterplan, e é a soma delas que faz o mesmo cliente vir mais de uma vez por semana.`}
-            </p>
-          </Reveal>
-
-          <ul className="mt-10 space-y-3">
-            {publico.pavimentos.map((p, i) => (
-              <li key={p.pavimento}>
-                <Reveal delay={0.08 + i * 0.06}>
-                  <Tilt grau={10} escala={1.02}>
-                    <div
-                      className={`flex flex-wrap items-baseline gap-x-4 gap-y-2 rounded-[var(--radius-brand)] border p-5 shadow-[0_14px_36px_-26px_rgba(14,20,48,0.8)] transition-colors duration-300 motion-reduce:transition-none md:p-6 ${
-                        p.destaque
-                          ? "border-lp-accent bg-lp-accent-soft"
-                          : escuro
-                            ? "border-white/12 bg-white/[0.06]"
-                            : "border-nexa-ink/10 bg-white"
-                      }`}
-                    >
-                      <span
-                        className={`text-[11px] font-bold uppercase tracking-[0.18em] ${escuro ? "text-white/50" : "text-nexa-mist"}`}
-                      >
-                        {p.pavimento}
-                      </span>
-                      <h3
-                        className={`heading-nexa text-[1.4rem] md:text-[1.6rem] ${escuro ? "text-white" : "text-nexa-ink"}`}
-                      >
-                        {p.categoria}
-                      </h3>
-                      {p.destaque && (
-                        <span className="rounded-full bg-lp-accent px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-lp-accent-contrast">
-                          Seu andar
-                        </span>
-                      )}
-                      <p
-                        className={`w-full text-[15px] leading-relaxed ${escuro ? "text-white/75" : "text-nexa-soft"}`}
-                      >
-                        {p.detalhe}
-                      </p>
-                    </div>
-                  </Tilt>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          {cabecalho}
+          {pavimentos}
         </div>
 
         <Reveal delay={0.12}>
-          {/* Este espaço pode mostrar o vídeo do projeto em vez de uma foto:
-              quem avalia o ativo quer ver o conjunto, e o vídeo entrega em
-              segundos o que três fotos não dão. Ele tem visor próprio, sempre
-              vertical (ver VideoPavimentos).
-
-              Só que o vídeo é um só: quando o hero já o mostra
-              (`hero.tituloVideo`), aqui volta a foto, senão a mesma peça
-              apareceria duas vezes na mesma página. */}
-          {publico.videoPavimentos && ativo.video && !publico.hero.tituloVideo ? (
+          {/* Aqui o vídeo do projeto ganha da foto quando a copy pede: quem
+              avalia o ativo quer ver o conjunto, e o vídeo entrega em segundos
+              o que três fotos não dão. Ele tem visor próprio, sempre vertical
+              (ver VideoPavimentos). O caso em que o hero já mostra o vídeo não
+              chega até aqui — cai no ramo sem mídia, acima. */}
+          {publico.videoPavimentos && ativo.video ? (
             <VideoPavimentos
               src={ativo.video.src}
               capa={ativo.video.capa}
