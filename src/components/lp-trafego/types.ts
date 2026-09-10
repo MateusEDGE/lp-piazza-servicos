@@ -57,6 +57,17 @@ export type PublicoLp = {
     subtitulo: string;
     cta: string;
     imagem: string;
+    /**
+     * Título do vídeo do projeto, ao lado da promessa — e o interruptor que
+     * move o vídeo para o hero.
+     *
+     * Preenchido, o hero troca os cards de números pelo vídeo do ativo e a
+     * seção de pavimentos volta a mostrar a foto; vazio, tudo fica como antes.
+     * É uma decisão por página, não por empreendimento: o vídeo na primeira
+     * tela é a prova mais forte para quem avalia o ativo (o investidor), e
+     * disputa a atenção de quem veio escolher uma loja.
+     */
+    tituloVideo?: string;
   };
   /** números da faixa de prova, ainda dentro do hero */
   provas: readonly { valor: string; label: string }[];

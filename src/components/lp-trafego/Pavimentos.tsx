@@ -88,11 +88,15 @@ export function Pavimentos({
         </div>
 
         <Reveal delay={0.12}>
-          {/* Na página do investidor este espaço mostra o vídeo do projeto, e
-              não uma foto: quem avalia o ativo quer ver o conjunto, e o vídeo
-              entrega em segundos o que três fotos não dão. Ele tem visor
-              próprio, sempre vertical (ver VideoPavimentos). */}
-          {publico.videoPavimentos && ativo.video ? (
+          {/* Este espaço pode mostrar o vídeo do projeto em vez de uma foto:
+              quem avalia o ativo quer ver o conjunto, e o vídeo entrega em
+              segundos o que três fotos não dão. Ele tem visor próprio, sempre
+              vertical (ver VideoPavimentos).
+
+              Só que o vídeo é um só: quando o hero já o mostra
+              (`hero.tituloVideo`), aqui volta a foto, senão a mesma peça
+              apareceria duas vezes na mesma página. */}
+          {publico.videoPavimentos && ativo.video && !publico.hero.tituloVideo ? (
             <VideoPavimentos
               src={ativo.video.src}
               capa={ativo.video.capa}
