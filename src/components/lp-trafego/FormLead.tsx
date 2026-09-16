@@ -7,6 +7,7 @@ import {
   capturarOrigem,
   empurrarEventoLead,
   linkLead,
+  mascaraTelefone,
   registrarLead,
   type Lead,
 } from "@/lib/leads";
@@ -109,7 +110,12 @@ export function FormLead({
   return (
     // scroll-mt compensa o cabeçalho fixo: sem isso o salto pela âncora para
     // com o menu cobrindo o primeiro campo do formulário
-    <SectionShell id="formulario" tone="light" compacto className="scroll-mt-24">
+    <SectionShell
+      id="formulario"
+      tone="light"
+      compacto
+      className="scroll-mt-24"
+    >
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:items-center lg:gap-20">
         <div>
           <Reveal>
@@ -185,19 +191,45 @@ export function FormLead({
                   <label className={rotulo} htmlFor={`${id}-tel`}>
                     WhatsApp
                   </label>
-                  <input
-                    id={`${id}-tel`}
-                    name="telefone"
-                    type="tel"
-                    inputMode="tel"
-                    autoComplete="tel"
-                    value={telefone}
-                    onChange={(e) =>
-                      setTelefone(mascaraTelefone(e.target.value))
-                    }
-                    placeholder="(34) 99999-9999"
-                    className={`mt-2 ${estiloCampo}`}
-                  />
+                  {/*
+                    O `+55` fica fora do campo, fixo e não editável, para a
+                    pessoa não digitá-lo: quem digitava perdia os dois últimos
+                    dígitos do próprio número (ver `mascaraTelefone`), e o lead
+                    chegava ao comercial impossível de chamar. A máscara agora
+                    também tolera quem digita assim mesmo — as duas defesas
+                    juntas, porque o campo não tem uma segunda chance.
+                  */}
+                  <div className="mt-2 flex items-stretch overflow-hidden rounded-[var(--radius-brand)] border border-nexa-ink/15 bg-white transition-colors duration-200 focus-within:border-lp-accent motion-reduce:transition-none">
+                    <span
+                      aria-hidden
+                      className="flex select-none items-center gap-2 border-r border-nexa-ink/10 bg-nexa-ink/[0.04] px-4 text-[16px] font-semibold text-nexa-soft"
+                    >
+                      +55
+                    </span>
+                    <input
+                      id={`${id}-tel`}
+                      name="telefone"
+                      type="tel"
+                      inputMode="numeric"
+                      // `tel-national` e não `tel`: o país está fora do campo,
+                      // então o preenchimento automático do navegador não deve
+                      // devolver o número completo aqui dentro.
+                      autoComplete="tel-national"
+                      value={telefone}
+                      onChange={(e) =>
+                        setTelefone(mascaraTelefone(e.target.value))
+                      }
+                      placeholder="(34) 99999-9999"
+                      aria-describedby={`${id}-tel-ajuda`}
+                      className="w-full bg-transparent px-4 py-3.5 text-[16px] text-nexa-ink outline-none placeholder:text-nexa-mist"
+                    />
+                  </div>
+                  <p
+                    id={`${id}-tel-ajuda`}
+                    className="mt-2 text-[12px] leading-relaxed text-nexa-mist"
+                  >
+                    DDD e número — o código do país já está aí.
+                  </p>
                 </div>
 
                 <div>
@@ -281,13 +313,4 @@ export function FormLead({
       </div>
     </SectionShell>
   );
-}
-
-/** Máscara de telefone brasileiro, com 8 ou 9 dígitos depois do DDD. */
-function mascaraTelefone(valor: string): string {
-  const d = valor.replace(/\D/g, "").slice(0, 11);
-  if (d.length <= 2) return d;
-  if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
-  if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
-  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
 }

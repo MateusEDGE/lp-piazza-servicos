@@ -86,6 +86,51 @@ export function capturarOrigem(): Origem {
 }
 
 /**
+ * Máscara de telefone brasileiro, com 8 ou 9 dígitos depois do DDD.
+ *
+ * Mora aqui, e não no formulário, porque são **dois** os formulários que geram
+ * lead — a seção das landings de tráfego e a janela de contato dos ativos sem
+ * landing — e telefone malformado custa o lead inteiro: o comercial fica sem
+ * como ligar de volta. Regra escrita uma vez, aplicada nos dois.
+ *
+ * **O código do país sai antes do corte, e não depois.** A versão anterior
+ * cortava em 11 dígitos contados do começo, então quem digitava o 55 na frente
+ * perdia os **dois últimos** dígitos do próprio número — e o estrago não
+ * aparecia, porque o que sobrava continuava parecendo um telefone. Pior: com
+ * exatamente 11 dígitos começando em 55, o `partesDoTelefone` de
+ * `src/lib/zaper.ts` não reconhece o 55 como país (ele só corta acima de 11) e
+ * prefixa **outro** 55 por cima. Um `(34) 99880-0151` chegava ao CRM como
+ * `+55 5534988 0151`. Visto em produção em 16/09/2026, num lead que não deu
+ * para chamar de volta.
+ *
+ * O limite de 11 dígitos continua, e o campo agora mostra o `+55` fixo do lado
+ * de fora — mas a máscara não conta com isso: quem cola do WhatsApp cola com o
+ * país junto, e o campo não tem uma segunda chance.
+ *
+ * O 55 só é tratado como país **acima** de 11 dígitos: `55 99999-9999` tem 11
+ * e é um celular inteiro de Santa Maria, cujo DDD é 55. Cortar abaixo disso
+ * seria o mesmo erro ao contrário. A regra é a mesma dos dois lados, aqui e no
+ * `partesDoTelefone`, de propósito — se uma mudar, a outra tem de mudar junto.
+ */
+export function mascaraTelefone(valor: string): string {
+  // Os zeros da frente somem junto: DDD brasileiro vai de 11 a 99, então
+  // número começando em 0 só pode ser o prefixo de interurbano que muita gente
+  // digita por hábito (`034 99880-0151`). Deixá-lo passar empurraria o número
+  // inteiro duas casas — o mesmo estrago que o 55 fazia.
+  const digitados = valor.replace(/\D/g, "").replace(/^0+/, "");
+  const semPais =
+    digitados.length > 11 && digitados.startsWith("55")
+      ? digitados.slice(2)
+      : digitados;
+  const d = semPais.slice(0, 11);
+  if (d.length <= 2) return d;
+  if (d.length <= 6) return `(${d.slice(0, 2)}) ${d.slice(2)}`;
+  if (d.length <= 10)
+    return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
+  return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+}
+
+/**
  * Mensagem que o lead envia ao comercial, já qualificada.
  *
  * O texto é escrito na primeira pessoa porque quem aparece enviando é o próprio
@@ -180,7 +225,10 @@ declare global {
  * comercial lê no WhatsApp; o GTM quer o identificador estável do CMS
  * ("piazza-nicomedes"). Quem chama tem os dois à mão e passa o certo.
  */
-export function empurrarEventoLead(lead: Lead, empreendimentoSlug: string): void {
+export function empurrarEventoLead(
+  lead: Lead,
+  empreendimentoSlug: string,
+): void {
   if (typeof window === "undefined") return;
 
   window.dataLayer = window.dataLayer ?? [];
