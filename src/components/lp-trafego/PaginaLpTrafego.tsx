@@ -23,9 +23,15 @@ import type { AtivoLp, PublicoLp } from "./types";
  * A ordem das seções é a de uma página de resposta direta, e não é arbitrária:
  * promessa e prova (hero) → a dor de quem chegou (por que continuar lendo) →
  * os argumentos → o ativo (pavimentos, ficha, imagens) → por que confiar na
- * casa → as objeções → o formulário → o último chamado. Quem já decidiu no hero
+ * casa → o formulário → as objeções → o último chamado. Quem já decidiu no hero
  * converte no primeiro botão; quem precisa de mais razão desce e encontra a
  * dela pelo caminho.
+ *
+ * O formulário vem antes das perguntas frequentes desde 23/09/2026 (pedido do
+ * Mateus): as duas seções **trocaram de conteúdo, não de fundo**. O lugar
+ * escuro logo depois das marcas continua escuro, agora com o formulário; o
+ * claro seguinte continua claro, agora com as dúvidas. Por isso `FormLead` é
+ * `none` e `Faq` é `light`, e a corrente de fundos abaixo não mudou.
  *
  * Os tons de fundo alternam a cada seção, a mesma regra do resto do site:
  * branco → azul → claro → azul → branco → azul → claro → azul → branco → azul.
@@ -133,8 +139,8 @@ export async function PaginaLpTrafego({
 
         <ProvaNexa entregas={entregas} numeros={numeros} />
         <MarcasNexa marcas={marcas} />
-        <Faq publico={publico} />
         <FormLead publico={publico} ativo={ativo} lpOrigem={lpOrigem} />
+        <Faq publico={publico} />
         <FechamentoLp publico={publico} ativo={ativo} />
       </main>
     </LpThemeProvider>

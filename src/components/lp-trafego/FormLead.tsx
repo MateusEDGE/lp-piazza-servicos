@@ -27,6 +27,12 @@ import type { AtivoLp, PublicoLp } from "./types";
  * copy — `form.campo` na configuração do público —, e não um `if` de slug aqui
  * dentro.
  *
+ * Fica sobre o fundo escuro da página, antes das perguntas frequentes (pedido
+ * do Mateus em 23/09/2026: as duas seções trocaram de lugar, mas cada fundo
+ * ficou onde estava). O cartão branco continua branco de propósito: sobre o
+ * azul-noite ele vira o ponto mais claro da tela, que é onde o olho tem de
+ * parar. Só a coluna de texto muda de cor.
+ *
  * No envio, a janela do WhatsApp abre no mesmo gesto do clique — sem `await`
  * antes, senão o bloqueador de pop-up derruba a aba — com a mensagem já
  * montada e qualificada. O registro no CRM (ver `src/lib/leads.ts`) corre por
@@ -112,7 +118,7 @@ export function FormLead({
     // com o menu cobrindo o primeiro campo do formulário
     <SectionShell
       id="formulario"
-      tone="light"
+      tone="none"
       compacto
       className="scroll-mt-24"
     >
@@ -120,10 +126,10 @@ export function FormLead({
         <div>
           <Reveal>
             <p className="label-editorial text-lp-accent">Fale com o time</p>
-            <h2 className="display-editorial mt-4 text-nexa-ink">
+            <h2 className="display-editorial mt-4 text-white">
               {publico.form.titulo}
             </h2>
-            <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-nexa-soft">
+            <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-white/80">
               {publico.form.texto}
             </p>
           </Reveal>
@@ -137,7 +143,7 @@ export function FormLead({
               ].map((linha) => (
                 <li
                   key={linha}
-                  className="flex items-start gap-3 text-[15px] text-nexa-soft"
+                  className="flex items-start gap-3 text-[15px] text-white/80"
                 >
                   <span
                     aria-hidden
